@@ -65,7 +65,7 @@
   }
 }
 
-#idHome a.active {
+/* #idHome a.active {
   @apply text-white bg-primary;
 }
 
@@ -83,4 +83,4 @@
 }
 #idImage a.active {
   @apply text-white bg-primary;
-}
+} */
