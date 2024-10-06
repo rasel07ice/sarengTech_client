@@ -76,7 +76,7 @@ const Header = () => {
         </div>
         <div className="hidden md:flex navbar-center">
           <ul className="menu menu-horizontal px-1">
-          <li id="idHome">
+            <li id="idHome">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -85,24 +85,20 @@ const Header = () => {
               >
                 Home
               </NavLink>
-            </li>            
+            </li>
             <li id="idCourses">
               <NavLink
                 to="/Courses"
-                className={({ isActive }) =>
-                  isActive ? "active" : ""
-                }
+                className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Courses
               </NavLink>
             </li>
-            
+
             <li id="idAbout">
               <NavLink
                 to="/aboutus"
-                className={({ isActive }) =>
-                  isActive ? "active" : ""
-                }
+                className={({ isActive }) => (isActive ? "active" : "")}
               >
                 About Us
               </NavLink>
@@ -110,9 +106,7 @@ const Header = () => {
             <li id="idContact">
               <NavLink
                 to="/contactus"
-                className={({ isActive }) =>
-                  isActive ? "active" : ""
-                }
+                className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Contact Us
               </NavLink>
@@ -124,9 +118,7 @@ const Header = () => {
                   <li id="idHow">
                     <NavLink
                       to="/howitworks"
-                      className={({ isActive }) =>
-                        isActive ? "active " : ""
-                      }
+                      className={({ isActive }) => (isActive ? "active " : "")}
                     >
                       How it Works
                     </NavLink>
@@ -135,9 +127,7 @@ const Header = () => {
                   <li id="idImage">
                     <NavLink
                       to="/imagegallery"
-                      className={({ isActive }) =>
-                        isActive ? "active" : ""
-                      }
+                      className={({ isActive }) => (isActive ? "active" : "")}
                     >
                       Image Gallary
                     </NavLink>

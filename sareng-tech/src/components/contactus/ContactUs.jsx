@@ -1,7 +1,7 @@
 const ContactUs = () => {
   return (
-    <div>
-      <div className="bg-primary text-gray-100 px-8 py-12">
+    <div className="mt-16">
+      <div className="bg-primary rounded-md text-gray-100 px-8 py-12">
         <div className="text-center w-full">
           <svg
             className="text-gray-100 h-8 mx-auto"

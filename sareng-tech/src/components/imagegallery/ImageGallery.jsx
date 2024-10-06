@@ -2,7 +2,7 @@ import MasonaryImageGrid from "./MasonaryImageGrid";
 
 const ImageGallery = () => {
   return (
-    <div className="mt-12">
+    <div className="mt-16">
       <div className="mb-8">
         <h2 className="text-secondary text-4xl font-semibold text-center">
           Image Gallery
@@ -22,7 +22,7 @@ const ImageGallery = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div >
         <MasonaryImageGrid />
       </div>
     </div>
