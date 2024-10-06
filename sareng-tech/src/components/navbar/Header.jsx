@@ -1,20 +1,22 @@
 import { useAuth } from "@/context/AuthProvider";
 import { FiLogIn } from "react-icons/fi";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 
 const Header = () => {
   const { user, userLogOut } = useAuth();
+  const navigate = useNavigate();
 
   const handleSignOut = () => {
     userLogOut().then(() => {
       toast("User log out successfully");
+      navigate("/");
     });
   };
   return (
-    <header>
-      <div className="navbar bg-base-100">
+    <header className="mb-36">
+      <div className="navbar fixed top-0 left-0 bg-base-100 z-10 px-4 md:px-8 lg:px-24 xl:px-32">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -75,12 +77,12 @@ const Header = () => {
           </div>
         </div>
         <div className="hidden md:flex navbar-center">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 space-x-1 text-[12px]">
             <li id="idHome">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "active" : ""
+                  isActive ? "active" : "hover:bg-primary"
                 }
               >
                 Home
@@ -89,7 +91,9 @@ const Header = () => {
             <li id="idCourses">
               <NavLink
                 to="/Courses"
-                className={({ isActive }) => (isActive ? "active" : "")}
+                className={({ isActive }) =>
+                  isActive ? "active" : "hover:bg-primary"
+                }
               >
                 Courses
               </NavLink>
@@ -98,7 +102,9 @@ const Header = () => {
             <li id="idAbout">
               <NavLink
                 to="/aboutus"
-                className={({ isActive }) => (isActive ? "active" : "")}
+                className={({ isActive }) =>
+                  isActive ? "active" : "hover:bg-primary"
+                }
               >
                 About Us
               </NavLink>
@@ -106,7 +112,9 @@ const Header = () => {
             <li id="idContact">
               <NavLink
                 to="/contactus"
-                className={({ isActive }) => (isActive ? "active" : "")}
+                className={({ isActive }) =>
+                  isActive ? "active" : "hover:bg-primary"
+                }
               >
                 Contact Us
               </NavLink>
@@ -118,7 +126,9 @@ const Header = () => {
                   <li id="idHow">
                     <NavLink
                       to="/howitworks"
-                      className={({ isActive }) => (isActive ? "active " : "")}
+                      className={({ isActive }) =>
+                        isActive ? "active " : "hover:bg-primary"
+                      }
                     >
                       How it Works
                     </NavLink>
@@ -127,7 +137,9 @@ const Header = () => {
                   <li id="idImage">
                     <NavLink
                       to="/imagegallery"
-                      className={({ isActive }) => (isActive ? "active" : "")}
+                      className={({ isActive }) =>
+                        isActive ? "active" : "hover:bg-primary"
+                      }
                     >
                       Image Gallary
                     </NavLink>

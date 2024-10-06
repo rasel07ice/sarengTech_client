@@ -6,7 +6,7 @@ const CourseDetails = () => {
   return (
     <div className="py-8">
       <div>
-        <div className="flex flex-row gap-3 items-center mt-2">
+        <div className="flex flex-col md:flex-row gap-3 items-center mt-2">
           <img
             className="size-96 rounded-lg shadow-sm"
             src={course?.img_url}
@@ -14,7 +14,7 @@ const CourseDetails = () => {
           />
           <div className="text-left">
             <h3 className="text-xl font-bold">
-              <span className="font-semibold">Book Name: </span>
+              <span className="font-semibold">Course Name: </span>
               {course?.title}
             </h3>
             <p className="text-lg">
@@ -41,30 +41,26 @@ const CourseDetails = () => {
               <span>Rating:</span>
               {course?.ratings}
             </div>
+            <div>
+              <p className="text-lg font-semibold">Trainer:</p>
+              <img
+                className="size-16 rounded-full"
+                src={course?.author_img_url}
+                alt="Author"
+              />
+              <span className="font-semibold text-primary">
+                {course?.author}
+              </span>
+            </div>
           </div>
         </div>
 
         <div className="text-left space-y-5">
           <p>
-            <span>Reviews: </span>
+            <span>Description: </span>
             {course?.details}
           </p>
         </div>
-        {/* <div className="flex flex-row gap-6 py-4">
-          <button
-            className="bg-primary px-3 py-2 border-none rounded-md"
-            onClick={() => notify(book?.bookId, book?.bookName)}
-          >
-            Wish to Read
-          </button>
-          <button
-            className="bg-backPrimay px-3 py-2 border-none rounded-md"
-            onClick={() => AddToCart(book?.bookId, book?.bookName)}
-          >
-            Add to Cart
-          </button>
-
-        </div> */}
       </div>
     </div>
   );

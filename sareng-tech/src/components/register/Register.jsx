@@ -1,6 +1,6 @@
 import { useAuth } from "@/context/AuthProvider";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const Register = () => {
@@ -11,6 +11,8 @@ const Register = () => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleInput = (e) => {
     e.preventDefault();
@@ -24,16 +26,28 @@ const Register = () => {
     e.preventDefault();
     createUser(input.email, input.password)
       .then((result) => {
+        debugger;
         const user = result.user;
         updateUserProfile(input.fullName, input.photoUrl).then(() => {
           console.log("profile updated successfully");
         });
-        console.log(user);
-        toast(`${user.email} user created successfully`);
+        toast.success("Registration Status", {
+          description: "Registration Successfull",
+          action: {
+            label: "Close",
+            onClick: () => console.log("Undo"),
+          },
+        });
+        navigate("/login");
       })
       .catch((error) => {
-        console.log(error.message);
-        toast(` Registration Faiilled! ${error.message}`);
+        toast.error("Registration Status", {
+          description: `User Login failled! ${error.message}`,
+          action: {
+            label: "Close",
+            onClick: () => console.log("Undo"),
+          },
+        });
       });
   };
 
@@ -41,7 +55,7 @@ const Register = () => {
     <div className="hero bg-white min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card bg-base-300 w-full max-w-sm shrink-0 shadow-2xl">
-          <form className="card-body" onSubmit={handleRegisterEvent}>
+          <form className="card-body " onSubmit={handleRegisterEvent}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Full Name</span>

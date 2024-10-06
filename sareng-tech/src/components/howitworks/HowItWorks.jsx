@@ -2,8 +2,10 @@ const HowItWorks = () => {
   return (
     <div className=" px-20 mt-16 space-y-16">
       <div className="text-center space-y-4">
-        <h2 className="text-3xl text-secondary">How It Works</h2>
-        <p className="text-5xl text-primary">Simply Three Steps to Enroll</p>
+        <h2 className="text-xl md:text-3xl text-secondary">How It Works</h2>
+        <p className=" text-2xl md:text-5xl text-primary">
+          Simply Three Steps to Enroll
+        </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 md:space-x-12 lg:space-x-24">
         <div className="text-center ">
